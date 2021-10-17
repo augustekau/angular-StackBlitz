@@ -1,5 +1,33 @@
 <h2>Products</h2>
 
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <img src="{{ product.photo }}" />
+
+  <p *ngIf="product.description; else noDescription">
+    Description: {{ product.description }}
+  </p>
+  <ng-template #noDescription> <p>No descripton</p></ng-template>
+
+  <div class="share">
+    <button (click)="share()">
+      <i class="material-icons text-white">share</i>
+      Share to Facebook
+    </button>
+  </div>
+  <!-- TODO: Galima sukurti share to twitter mygtuka -->
+  <div class="share">
+    <button (click)="shareTwitter()">
+      <i class="material-icons text-white">share</i>
+      Tweet
+    </button>
+  </div>
+</div>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
