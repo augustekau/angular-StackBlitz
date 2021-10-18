@@ -6,9 +6,9 @@
       {{ product.name }}
     </a>
   </h3>
-
-  <img src="{{ product.photo }}" />
-
+  <div *ngIf="product.photo">
+    <img alt="photo" [src]="product.photo" />
+  </div>
   <p *ngIf="product.description; else noDescription">
     Description: {{ product.description }}
   </p>

@@ -29,7 +29,7 @@ export class ProductListComponent {
 
   shareTwitter() {
     window.alert('The product has been shared');
-    let url = 'https://twitter.com/intent/tweet?text=&url';
+    let url = 'https://twitter.com/intent/tweet?text=Link&url' + window.location.href;;
     window.open(url, 'sharer');
   }
 }
